@@ -13,7 +13,7 @@ class ExplorePage extends StatelessWidget {
         title: const Row(
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar.png'),
+              backgroundImage: AssetImage('Images/avatar.png'),
             ),
             SizedBox(width: 10),
             Column(
@@ -40,202 +40,367 @@ class ExplorePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Search Field
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Discover a city',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-              ),
-            ),
-            const SizedBox(height: 20),
-            // Featured Card
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            SizedBox(
+              height: 300,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      'Images/oldgoa.jpg', // Main image at the top
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Basilica de Bom Jesus',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text('North Goa'),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.arrow_forward),
-                      onPressed: () {
-                        // Add navigation or action here
-                      },
-                    ),
-                  ),
-                  // Horizontal ListView starts here
+                  // Card 1 - Basilica
                   Container(
-                    height: 180, // You can adjust the height as per your needs
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        // First Card Item in the horizontal list
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                    width: 280,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                            child: Image.asset(
+                              'Images/oldgoa.jpg',
+                              height: 180,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          child: Container(
-                            width: 140, // Width of each card
-                            padding: EdgeInsets.all(8),
+                          Padding(
+                            padding: const EdgeInsets.all(12),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.asset(
-                                    'Images/oldgoa.jpg', // Example image for the card
-                                    height:
-                                        100, // Adjust the height of the image
-                                    width: double.infinity,
-                                    fit: BoxFit.cover,
+                                const Text(
+                                  'Basilica de Bom Jesus',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                SizedBox(height: 8),
-                                Text(
-                                  'Old Goa',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                const SizedBox(height: 4),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      'Old Goa',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.arrow_forward),
+                                      onPressed: () {
+                                        // Add navigation or action here
+                                      },
+                                    ),
+                                  ],
                                 ),
-                                Text('Place 1'),
                               ],
                             ),
                           ),
-                        ),
-                        SizedBox(width: 8), // Space between cards
-                        // Second Card Item in the horizontal list
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 2 - Beach
+                  Container(
+                    width: 280,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                            child: Image.asset(
+                              'Images/beaches.jpg',
+                              height: 180,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          child: Container(
-                            width: 140,
-                            padding: EdgeInsets.all(8),
+                          Padding(
+                            padding: const EdgeInsets.all(12),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.asset(
-                                    'Images/oldgoa.jpg', // Example image for the card
-                                    height: 100,
-                                    width: double.infinity,
-                                    fit: BoxFit.cover,
+                                const Text(
+                                  'Calangute Beach',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                SizedBox(height: 8),
-                                Text(
-                                  'Old Goa',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                const SizedBox(height: 4),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      'North Goa',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.arrow_forward),
+                                      onPressed: () {
+                                        // Add navigation or action here
+                                      },
+                                    ),
+                                  ],
                                 ),
-                                Text('Place 2'),
                               ],
                             ),
                           ),
-                        ),
-                        SizedBox(width: 8), // Space between cards
-                        // Third Card Item in the horizontal list
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 3 - Hotel
+                  Container(
+                    width: 280,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                            child: Image.asset(
+                              'Images/hotel.jpg',
+                              height: 180,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          child: Container(
-                            width: 140,
-                            padding: EdgeInsets.all(8),
+                          Padding(
+                            padding: const EdgeInsets.all(12),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.asset(
-                                    'Images/oldgoa.jpg', // Example image for the card
-                                    height: 100,
-                                    width: double.infinity,
-                                    fit: BoxFit.cover,
+                                const Text(
+                                  'Hotel Grand Hyaat',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                SizedBox(height: 8),
-                                Text(
-                                  'Old Goa',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                const SizedBox(height: 4),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      'Cavelossim',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.arrow_forward),
+                                      onPressed: () {
+                                        // Add navigation or action here
+                                      },
+                                    ),
+                                  ],
                                 ),
-                                Text('Place 3'),
                               ],
                             ),
                           ),
-                        ),
-                        SizedBox(width: 8), // Space between cards
-                        // Add more cards as needed...
-                      ],
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Card 4 - Waterfall
+                  Container(
+                    width: 280,
+                    margin: const EdgeInsets.only(right: 16),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      elevation: 4,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                            child: Image.asset(
+                              'Images/activities.jpg',
+                              height: 180,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Dudhsagar Falls',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      'Mollem',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.arrow_forward),
+                                      onPressed: () {
+                                        // Add navigation or action here
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-
             const SizedBox(height: 20),
             // Categories
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Category',
+                  'Explore More',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                /*Text(
                   'Show All',
                   style: TextStyle(color: Colors.blue),
-                ),
+                ),*/
               ],
             ),
             const SizedBox(height: 10),
             // Category Icons
-            const SingleChildScrollView(
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage(
-                          'assets/category1.jpg')), // Replace with category images
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage('assets/category2.jpg')),
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage('assets/category3.jpg')),
-                  SizedBox(width: 10),
-                  CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage('assets/category4.jpg')),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: 150,
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: const DecorationImage(
+                        image: AssetImage('Images/beaches.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [
+                            Colors.black.withOpacity(0.6),
+                            Colors.transparent,
+                          ],
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(16),
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Beaches',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: 150,
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: const DecorationImage(
+                        image: AssetImage('Images/hotel.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [
+                            Colors.black.withOpacity(0.6),
+                            Colors.transparent,
+                          ],
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(16),
+                      child: const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          'Hotels',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Repeat for other items...
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
-      // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const [
